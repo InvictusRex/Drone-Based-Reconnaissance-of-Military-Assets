@@ -29,7 +29,7 @@ def check_yolo_class_distribution(labels_dir):
     # Sort results by frequency
     sorted_counts = sorted(class_counts.items(), key=lambda x: x[1], reverse=True)
 
-    print("\nClass Distribution:")
+    print("Class Distribution:")
     for class_id, count in sorted_counts:
         name = class_names[class_id] if class_id < len(class_names) else f"Class {class_id}"
         print(f"{name}: {count} instances")
@@ -38,9 +38,14 @@ def check_yolo_class_distribution(labels_dir):
         most = sorted_counts[0][1]
         least = sorted_counts[-1][1]
         imbalance_ratio = most / least if least > 0 else float('inf')
-        print(f"\nImbalance ratio (most/least): {imbalance_ratio:.2f}")
+        print(f"Imbalance ratio (most/least): {imbalance_ratio:.2f}")
     else:
         print("Only one class found.")
 
-# Example usage
-check_yolo_class_distribution(labels_dir=r'../../Datasets/Combined_Dataset/train/labels')  # Change this to your label path
+print("\nTraining Set:")
+check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented_Dataset/train/labels')
+print("\nValidation Set:")
+check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented_Dataset/val/labels')
+print("\nTest Set:")
+check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented_Dataset/test/labels')
+print("\n")
