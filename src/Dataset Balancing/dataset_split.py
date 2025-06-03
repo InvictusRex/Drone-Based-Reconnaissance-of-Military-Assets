@@ -3,10 +3,10 @@ import shutil
 import random
 
 # === CONFIGURATION ===
-images_dir = r'../../Datasets/Stanford_Cars/all_images'         # Original folder with .jpg images
-labels_dir = r'../../Datasets/Stanford_Cars/labels'       # Original folder with .txt labels
+images_dir = r'../../../Datasets/mil_vehicle/train/images'         # Original folder with .jpg images
+labels_dir = r'../../../Datasets/mil_vehicle/train/labels'       # Original folder with .txt labels
 
-output_base = r'../../Datasets/Stanford_Cars/split'     # Where the split folders will be created
+output_base = r'../../../Datasets/mil_vehicle/split'     # Where the split folders will be created
 splits = ['train', 'val', 'test']
 split_ratio = [0.7, 0.15, 0.15]   # 70% train, 15% val, 15% test
 

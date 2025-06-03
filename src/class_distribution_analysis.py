@@ -43,4 +43,4 @@ def check_yolo_class_distribution(labels_dir):
         print("Only one class found.")
 
 # Example usage
-check_yolo_class_distribution(labels_dir=r'../Datasets/Combined_Dataset/train/labels')  # Change this to your label path
+check_yolo_class_distribution(labels_dir=r'../../Datasets/Combined_Dataset/train/labels')  # Change this to your label path
