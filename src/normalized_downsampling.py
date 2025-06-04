@@ -2,14 +2,14 @@ import os
 import random
 
 # Configuration
-target_class = 0
-target_count = 12000
+target_class = 5
+target_count = 4000
 dataset_path = r'../../Datasets/Dataset_1'
 splits = ["train", "val", "test"]
 image_extensions = [".jpg", ".jpeg", ".png", ".bmp"]
 
-# Count existing class 0 instances and collect deletable files
-class0_instance_count = 0
+# Count existing target_class instances and collect deletable files
+target_class_instance_count = 0
 deletable_files = []
 
 for split in splits:
@@ -25,19 +25,19 @@ for split in splits:
             lines = f.readlines()
 
         class_ids = [int(line.strip().split()[0]) for line in lines if line.strip()]
-        class0_count = class_ids.count(target_class)
+        target_class_count = class_ids.count(target_class)
 
-        class0_instance_count += class0_count
+        target_class_instance_count += target_class_count
 
-        # If all annotations are class 0, mark for deletion
+        # If all annotations are target_class, mark for deletion
         if all(cls == target_class for cls in class_ids):
-            deletable_files.append((label_path, images_dir, label_file, class0_count))
+            deletable_files.append((label_path, images_dir, label_file, target_class_count))
 
 # Shuffle to randomly remove
 random.shuffle(deletable_files)
 
-# Delete until we bring count down to 12000
-to_delete = class0_instance_count - target_count
+# Delete until we bring count down to target_count
+to_delete = target_class_instance_count - target_count
 deleted_instances = 0
 deleted_files = 0
 
@@ -59,5 +59,5 @@ for label_path, images_dir, label_file, count in deletable_files:
     deleted_instances += count
     deleted_files += 1
 
-print(f"Deleted {deleted_files} image-label pairs containing only class 0 to reduce count to ~{target_count}.")
-print(f"New class 0 estimate: {class0_instance_count - deleted_instances}")
+print(f"Deleted {deleted_files} image-label pairs containing only class {target_class} to reduce count to ~{target_count}.")
+print(f"New class {target_class} estimate: {target_class_instance_count - deleted_instances}")

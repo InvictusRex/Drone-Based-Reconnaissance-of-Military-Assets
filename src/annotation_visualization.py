@@ -2,8 +2,8 @@ import os
 import cv2
 
 # === CONFIGURATION ===
-images_dir = r'../Augmented Downsampled Dataset/train/images'         # Folder with .jpg images
-labels_dir = r'../Augmented Downsampled Dataset/train/labels'         # Folder with .txt YOLO labels
+images_dir = r'../../Datasets/Augmented Downsampled Dataset/train/images'        # Folder with .jpg images
+labels_dir = r'../../Datasets/Augmented Downsampled Dataset/train/labels'         # Folder with .txt YOLO labels
 
 # List of class names (ordered by class ID)
 class_names = [

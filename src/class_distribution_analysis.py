@@ -43,9 +43,9 @@ def check_yolo_class_distribution(labels_dir):
         print("Only one class found.")
 
 print("\nTraining Set:")
-check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented_Dataset/train/labels')
+check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented Downsampled Dataset/train/labels')
 print("\nValidation Set:")
-check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented_Dataset/val/labels')
+check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented Downsampled Dataset/val/labels')
 print("\nTest Set:")
-check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented_Dataset/test/labels')
+check_yolo_class_distribution(labels_dir=r'../../Datasets/Augmented Downsampled Dataset/test/labels')
 print("\n")

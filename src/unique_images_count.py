@@ -1,6 +1,6 @@
 import os
 
-dataset_path = r'../../Datasets/Dataset_1'
+dataset_path = r'../../Datasets/Augmented Downsampled Dataset'
 
 splits = ["train", "val", "test"]
 image_extensions = {".jpg", ".jpeg", ".png", ".bmp"}
