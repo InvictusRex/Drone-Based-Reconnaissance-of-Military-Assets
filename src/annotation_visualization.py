@@ -12,7 +12,6 @@ class_names = [
     "military_vehicle",
     "civilian",
     "soldier",
-    "civilian_vehicle",
 ]
 
 # === VISUALIZATION LOOP ===
