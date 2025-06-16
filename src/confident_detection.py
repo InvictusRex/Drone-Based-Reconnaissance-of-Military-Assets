@@ -4,8 +4,8 @@ import torch
 import time
 
 # === CONFIG ===
-MODEL_PATH = r'../YOLOv8m Results & Metrics/weights/best.pt'  # <-- change if needed
-VIDEO_PATH = r'../Testing Videos/Test6.mp4'                    # <-- your input video
+MODEL_PATH = r'../YOLOv11m Results & Metrics/weights/best.pt'  # <-- change if needed
+VIDEO_PATH = r'../Testing Videos/Test5.mp4'                    # <-- your input video
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 CONFIDENCE_THRESHOLD = 0.4
 
